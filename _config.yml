@@ -22,12 +22,12 @@ description: "个人公众号：Serious but Funny  分享学习资源 | 学习�
 navigation:
   - name: 首页
     url: /
-  - name: 关于
-    url: /about
-  - name: 归档
-    url: /archive
-  - name: 标签
-    url: /tags
+  - name: CV
+    url: /cv
+  - name: Research
+    url: /research
+  - name: Blog
+    url: /blog
 
 # Pagination
 paginate: 8
