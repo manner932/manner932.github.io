@@ -2,33 +2,31 @@
 
 正式网址（启用 GitHub Pages 后）：https://manner932.github.io/
 
-网站源文件与维护入口：https://github.com/manner932/manner932.github.io/tree/main
+网站源文件与维护入口：https://github.com/manner932/manner932.github.io/tree/master
 
-本次学术主页使用 `main` 分支；仓库原有的 `master` 分支保留旧博客模板。维护时请先确认分支选择为 `main`。
+本次学术主页使用仓库默认的 `master` 分支，已经替换该分支中的旧博客模板。以后的内容与样式更新均在 `master` 上进行。
 
 英文、四个独立页面，无付费主题，无额外插件。CV、论文和教学笔记使用外部链接。网页正文、样式和上传的照片会在公开仓库中公开。
 
-## 第一次上线
+## 发布设置（一次性）
 
-1. 登录 GitHub，创建公开仓库，名称必须为 `manner932.github.io`。
-2. 上传本文件所在文件夹中的**内容**到仓库根目录，不要把整个文件夹作为一层子目录上传。根目录应该直接看到 `_config.yml`、`index.md` 等文件。需要上传 `_layouts` 和 `assets` 两个文件夹，可在网页上传区拖入文件及文件夹。
-3. 保存到 `main` 分支。
-4. 打开仓库的 **Settings → Pages**，Source 选择 **Deploy from a branch**，Branch 选择 **main**，文件夹选择 **/(root)**，点击 **Save**。
-5. 等待 GitHub 完成发布，再访问上面的正式网址。更新不是即时生效，需等发布完成。
+1. 打开 [Settings → Pages](https://github.com/manner932/manner932.github.io/settings/pages)。
+2. Source 选择 **Deploy from a branch**，Branch 选择 **master**，文件夹选择 **/(root)**，点击 **Save**，自定义域名保持为空。
+3. 等待 GitHub 完成发布，再访问上面的正式网址。更新不是即时生效，需等发布完成。无需重新上传网站文件。
 
 当前照片、CV、论文、课程和笔记尚未提供，页面会明确显示 forthcoming 或 will be added here。收到材料后替换提示即可。
 
 ## 日常修改
 
-在仓库中打开对应文件，点击铅笔图标编辑，完成后点击 **Commit changes**，直接保存到 `main`。GitHub 会自动更新网站。
+在仓库中打开对应文件，点击铅笔图标编辑，完成后点击 **Commit changes**，直接保存到 `master`。Pages 配置完成后，GitHub 会自动更新网站。
 
 可以直接点击以下编辑入口：
 
-- [修改简介](https://github.com/manner932/manner932.github.io/edit/main/index.md)
-- [修改论文列表](https://github.com/manner932/manner932.github.io/edit/main/research.md)
-- [修改授课和助教经历](https://github.com/manner932/manner932.github.io/edit/main/teaching.md)
-- [修改教学笔记](https://github.com/manner932/manner932.github.io/edit/main/others.md)
-- [修改 CV 链接或照片路径](https://github.com/manner932/manner932.github.io/edit/main/_config.yml)
+- [修改简介](https://github.com/manner932/manner932.github.io/edit/master/index.md)
+- [修改论文列表](https://github.com/manner932/manner932.github.io/edit/master/research.md)
+- [修改授课和助教经历](https://github.com/manner932/manner932.github.io/edit/master/teaching.md)
+- [修改教学笔记](https://github.com/manner932/manner932.github.io/edit/master/others.md)
+- [修改 CV 链接或照片路径](https://github.com/manner932/manner932.github.io/edit/master/_config.yml)
 
 | 内容 | 编辑文件 |
 | --- | --- |
