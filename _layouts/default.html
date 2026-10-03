@@ -1,34 +1,56 @@
-<!DOCTYPE html>
-<html>
-  {% include head.html %}
-  <body>
-    {% include nav.html %}
-
-    {% if page.toc==true %}
-      <aside class="toc">
-        {% include toc.html html=content %}
-      </aside>
-    {% endif %}
-
-    <div id="main" role="main" class="wrapper-content">
-      <div class="container">
-        {{ content }}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.nav != 'home' %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+      <nav aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/research/' | relative_url }}"{% if page.nav == 'research' %} aria-current="page"{% endif %}>Research</a>
+        <a href="{{ '/teaching/' | relative_url }}"{% if page.nav == 'teaching' %} aria-current="page"{% endif %}>Teaching</a>
+        <a href="{{ '/others/' | relative_url }}"{% if page.nav == 'others' %} aria-current="page"{% endif %}>Others</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      {% if page.nav == 'home' %}
+      <div class="home-grid">
+        <section class="home-copy" aria-labelledby="home-title">
+          <h1 id="home-title">{{ site.title | escape }}</h1>
+          <p class="affiliation">Guanghua School of Management<br>Peking University</p>
+          <div class="prose">{{ content }}</div>
+          {% if site.cv_url != '' %}
+          <p class="cv-link"><a href="{{ site.cv_url | escape }}">Curriculum Vitae (CV)</a></p>
+          {% else %}
+          <p class="pending cv-link">CV forthcoming.</p>
+          {% endif %}
+        </section>
+        {% if site.photo != '' %}
+        <figure class="portrait"><img src="{{ site.photo | relative_url }}" alt="{{ site.title | escape }}" width="224" height="280"></figure>
+        {% else %}
+        <div class="portrait portrait-pending" aria-label="Portrait forthcoming">
+          <span class="portrait-initials" aria-hidden="true">MBS</span>
+          <span>Portrait forthcoming</span>
+        </div>
+        {% endif %}
       </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
-
-  {% if page.toc==true %}
-  <script>
-    document.getElementById("main").classList.add("withtoc");
-  </script>
-  {% endif %}
-
-  <div class="wrapper-footer-mobile">
-    <footer class="footer">
-      {% include footer.html %}
-    </footer>
-
-
+      {% else %}
+      <article class="page-content">
+        <h1>{{ page.title | escape }}</h1>
+        <div class="prose">{{ content }}</div>
+      </article>
+      {% endif %}
+    </main>
+    <footer class="site-footer">{{ site.title | escape }}</footer>
+  </div>
+</body>
 </html>
